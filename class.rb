@@ -10,11 +10,9 @@ class RpgCharacter
 end
 
 class Hero < RpgCharacter
-    attr_accessor :name, :hp, :atk, :prt
 end
 
 class Enemy < RpgCharacter
-    attr_accessor :name, :hp, :atk, :prt
 end
 
 hero = Hero.new("勇者", 100, 8, 4)
