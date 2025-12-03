@@ -10,7 +10,6 @@ class RpgCharacter
 end
 
 class Hero < RpgCharacter
-    attr_accessor :name, :hp, :atk, :prt
 end
 
 class Enemy < RpgCharacter
