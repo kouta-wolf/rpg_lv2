@@ -13,8 +13,9 @@ class Hero < Rpgcharacter
     attr_accessor :name, :hp, :atk, :prt
 end
 
-class Enemy < RpgCharacter
+class Enemy < Rpgcharacter
     attr_accessor :name, :hp, :atk, :prt
 end
 
 hero = Hero.new("勇者", 100, 8, 4)
+slime = Enemy.new("スライム", 20, 4, 2)
