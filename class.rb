@@ -1,4 +1,4 @@
-class Rpgcharacter
+class RpgCharacter
     attr_accessor :name, :hp, :atk, :prt
     def initialize(name, hp, atk, prt)
         @name = name
@@ -9,11 +9,11 @@ class Rpgcharacter
     end
 end
 
-class Hero < Rpgcharacter
+class Hero < RpgCharacter
     attr_accessor :name, :hp, :atk, :prt
 end
 
-class Enemy < Rpgcharacter
+class Enemy < RpgCharacter
     attr_accessor :name, :hp, :atk, :prt
 end
 
