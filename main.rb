@@ -18,6 +18,11 @@ class RpgCharacter
         puts "敵に#{total_damage}ダメージを与えた"
         return total_damage
     end
+
+    def defense
+        puts "#{@name}は防御した"
+        @is_defending = true
+    end
 end
 
 class Hero < RpgCharacter
@@ -31,5 +36,3 @@ hero = Hero.new("勇者", 100, 8, 4, 10)
 slime = Enemy.new("スライム", 20, 4, 2)
 
 hero.attack
-
-
