@@ -52,7 +52,7 @@ end
 
 
 hero = Hero.new("勇者", 100, 8, 4, 11)
-slime = Enemy.new("スライム", 100, 4, 2)
+slime = Enemy.new("スライム", 30, 4, 2)
 puts "敵が現れた"
 loop do
 
