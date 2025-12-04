@@ -1,2 +1,2 @@
-module dice_roll
+module Dice_roll
 end
