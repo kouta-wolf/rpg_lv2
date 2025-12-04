@@ -1,5 +1,5 @@
 module Dice_roll
-    def critical(crit)
+    def self.critical(crit)
         dice_1 = rand(1..6)
         dice_2 = rand(1..6)
         current_total = dice_1 + dice_2
