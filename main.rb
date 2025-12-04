@@ -52,7 +52,7 @@ end
 
 
 hero = Hero.new("勇者", 100, 8, 4, 11)
-slime = Enemy.new("スライム", 20, 4, 2)
+slime = Enemy.new("スライム", 100, 4, 2)
 puts "敵が現れた"
 loop do
 
@@ -65,6 +65,11 @@ loop do
     if battle_select == 1
         damage_val = hero.attack
         slime.take_damage(damage_val)
+    elsif battle_select == 2
+        hero.defense
+    else
+        puts "コマンド入力ミスです。"
+        redo
     end
     
     puts "-------------------------"
@@ -75,10 +80,18 @@ loop do
         break
     end
     
+    puts ">> Enterキーで敵のターンに移行します"
+    gets
+
     puts "敵の攻撃です"
     damage_val = slime.attack
     hero.take_damage(damage_val)
     puts "-------------------------"
+
+    if hero.hp <= 0
+        puts "勇者は倒れた.."
+        break
+    end
 
     # ----テスト----
     puts "HERO_HP:#{hero.hp}, SLIME_HP:#{slime.hp}"
