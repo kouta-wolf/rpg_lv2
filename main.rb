@@ -23,6 +23,16 @@ class RpgCharacter
         puts "#{@name}は防御した"
         @is_defending = true
     end
+
+    def take_damage(total_damage)
+        if @is_defending
+            total_damage -= @prt * 2
+        else
+            total_damage -= @prt
+        end
+    puts "#{@name}は#{total_damage}を受けた!!"
+    @hp -= damage
+    end
 end
 
 class Hero < RpgCharacter
