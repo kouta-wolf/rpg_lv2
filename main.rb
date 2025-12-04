@@ -30,8 +30,14 @@ class RpgCharacter
         else
             total_damage -= @prt
         end
-    puts "#{@name}は#{total_damage}を受けた!!"
-    @hp -= damage
+
+        if total_damage > 0
+            puts "#{@name}は#{total_damage}ダメージを受けた!!"
+            @hp -= total_damage
+        else
+            puts "#{@name}は攻撃を受け流した!!"
+        end
+
     end
 end
 
@@ -41,8 +47,33 @@ end
 class Enemy < RpgCharacter
 end
 
-# ----テスト----
-hero = Hero.new("勇者", 100, 8, 4, 10)
-slime = Enemy.new("スライム", 20, 4, 2)
 
-hero.attack
+hero = Hero.new("勇者", 100, 8, 4, 11)
+slime = Enemy.new("スライム", 20, 4, 2)
+puts "敵が現れた"
+loop do
+    puts "あなたのターンです。何をしますか？"
+    puts "1.攻撃  2.防御"
+    battle_select = gets.to_i
+    if battle_select == 1
+        damage_val = hero.attack
+        slime.take_damage(damage_val)
+    end
+    
+    puts "-------------------------"
+    
+    if slime.hp <= 0
+        puts "スライムを倒しました"
+        puts "あなたの勝利です"
+        break
+    end
+    
+    puts "敵の攻撃です"
+    damage_val = slime.attack
+    hero.take_damage(damage_val)
+    puts "-------------------------"
+
+    # ----テスト----
+    puts "HERO_HP:#{hero.hp}, SLIME_HP:#{slime.hp}"
+end
+
