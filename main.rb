@@ -1,3 +1,5 @@
+require_relative 'dice' 
+
 class RpgCharacter
     attr_accessor :name, :hp, :atk, :prt
     def initialize(name, hp, atk, prt)
@@ -10,6 +12,7 @@ class RpgCharacter
 end
 
 class Hero < RpgCharacter
+    include Dice_roll
 end
 
 class Enemy < RpgCharacter
