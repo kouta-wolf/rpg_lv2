@@ -11,6 +11,10 @@ class RpgCharacter
         puts "#{@name}が誕生した!!（HP:#{@hp},ATK:#{@atk},DEF:#{@prt},CRI:#{@crit}）"
     end
 
+    def reset_status
+        @is_defending = false
+    end
+
     def attack
         puts "#{@name}の攻撃"
         crit_damage = Dice_roll.critical(@crit)
@@ -51,6 +55,10 @@ hero = Hero.new("勇者", 100, 8, 4, 11)
 slime = Enemy.new("スライム", 20, 4, 2)
 puts "敵が現れた"
 loop do
+
+    # 戦闘の初期化
+    hero.reset_status
+
     puts "あなたのターンです。何をしますか？"
     puts "1.攻撃  2.防御"
     battle_select = gets.to_i
