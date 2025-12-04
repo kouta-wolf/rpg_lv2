@@ -15,7 +15,6 @@ class RpgCharacter
         puts "#{@name}の攻撃"
         crit_damage = Dice_roll.critical(@crit)
         total_damage = @atk + crit_damage
-        puts "敵に#{total_damage}ダメージを与えた"
         return total_damage
     end
 
